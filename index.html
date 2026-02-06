@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Dear Mohabbat</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ff5f6d,#5f9cff);
+  font-family:Georgia,serif;
+  overflow:auto;
+}.card-content{
+  overflow-y:auto;
+  max-height:calc(85vh - 70px);
+  padding-right:8px;
+}
+
+.card button{
+  position:sticky;
+  bottom:0;
+  margin-top:15px;
+  width:100%;
+  background:#ff4d6d;
+  color:#fff;
+}
+
+
+/* FLOATING HEARTS */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:18px;
+  animation:floatUp 6s linear forwards;
+  opacity:.8;
+  pointer-events:none;
+}
+@keyframes floatUp{
+  to{transform:translateY(-110vh);opacity:0}
+}
+
+/* ENVELOPE */
+.envelope{
+  position:relative;
+  width:300px;
+  height:200px;
+  background:#c8a2ff;
+  border-radius:12px;
+  border:2px solid rgba(90,50,130,.6);
+  box-shadow:0 20px 40px rgba(0,0,0,.3);
+  cursor:pointer;
+  animation:float 2.5s ease-in-out infinite;
+}
+@keyframes float{50%{transform:translateY(-8px)}}
+
+.flap{
+  position:absolute;
+  inset:0;
+  background:#b08cf5;
+  clip-path:polygon(0 0,100% 0,50% 55%);
+  transform-origin:top;
+  transition:transform 1s ease;
+  z-index:2;
+}
+.open .flap{transform:rotateX(180deg)}
+
+.env-text{
+  position:absolute;
+  bottom:18px;
+  left:18px;
+  color:#4b1366;
+}
+.env-text p{font-size:18px;font-style:italic}.seal{
+  position:absolute;
+  width:70px;
+  height:auto;
+  left:50%;
+  top:60%;              /* 👈 moved slightly down */
+  transform:translate(-50%, -50%);
+  z-index:4;            /* 👈 ABOVE flap */
+  pointer-events:none;
+}
+
+
+}
+.open .seal{transform:translate(-50%,-50%) scale(.2);opacity:0}
+.seal img{width:100%;height:100%;object-fit:contain}
+
+/* CARDS */
+
+.card{
+  display:none;
+  background:#fff;
+  width:97%;
+  max-width:420px;
+  max-height:100vh;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
+  text-align:left;
+  animation:fade .8s;
+  position:relative;
+  overflow:auto;
+}
+
+
+@keyframes fade{from{opacity:0;transform:scale(.9)}}
+
+.sticker{
+  position:absolute;
+  width:70px;
+  animation:float 3s infinite;
+}
+
+/* BUTTONS */
+#btnBox{position:relative;height:180px;margin-top:20px}
+button{
+  padding:12px 26px;
+  border:none;
+  border-radius:25px;
+  font-size:16px;
+}
+#yes{position:absolute;left:20px;bottom:20px;background:#ff4d6d;color:#fff}
+#no{
+  position:absolute;
+  padding:6px 14px;
+  font-size:0.85em;
+  background:#eee;
+  color:#555;
+  border-radius:18px;
+  width:auto;              /* 🔑 prevents stretching */
+  min-width:60px;
+  max-width:90px;
+  text-align:center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.15);
+  transition:transform 0.2s ease, left 0.25s ease, top 0.25s ease;
+}
+
+
+/* FINAL */
+#final{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:linear-gradient(135deg,#ff5f6d,#5f9cff);
+  color:#fff;
+  text-align:center;
+}
+#finalContent{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+}
+#photo{
+  width:300px;height:300px;
+  border-radius:20px;
+  object-fit:cover;
+  margin-bottom:15px;
+}
+
+/* CONFETTI */
+.confetti{
+  position:fixed;
+  width:8px;height:8px;
+  animation:fall 3s linear forwards;
+}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+</style>
+</head>
+
+<body>
+
+<audio id="music" src="music.mp3" loop></audio>
+
+<div class="envelope" id="env" onclick="openEnvelope()" ontouchstart="openEnvelope()">
+  <div class="flap"></div>
+  <div class="env-text"><p>For Dear Mohabbat 💜</p></div>
+  <div class="seal"><img src="bubu-dudu-seal.png"></div>
+</div>
+
+<div class="card" id="apology">
+  <img src="bubu.gif" class="sticker" style="top:+10px;right:-10px;z-index:4;">
+  <h2>I’m Sorry 🥺💗</h2>
+  <p>Umm to ye hai to kisi or chij ke liye but ye SORRY ke liye .. I know ki me bahot ganda aadmi hu waise .. kha mene .. I'm really sorry.. koi explanation nahi dunga ki me gussa tha falana dhimkana bas janta hu ki me galat tha mene galat kha tha .. SORRY Sanuu 
+Janta hu me or sabhi mard ek hi type ke hai jo ki tumhari feed tumhe bata hi Rahi hai ki mard kitne ghatiya hote hai sabko bas sex chahiye hota aisi or bhi baatein hai .
+Kher mere se jada tumhe pta hai kon kaisa hai .. or haan janta hu tumhe dar hai ki shaadi ke baad ya future tumhe kya kuch jhelna padega me ya koi bhi tumhare sath kaisa behave karega tumhe dar hai is baat kaa ..janta hu . 
+Mene Aaj Tak kabhi aisa nahi socha hai kabhi but me nahi kahunga ki mere pe trust Karo kyuki jab mene hi tumhe.. waise kaha .. to mujhe apne aap pe bhi trust nahi hai ab . Pta nahi me ye tumhe manane ke liye socha tha but waisa kuch lag nahi tha mujhko .
+Or haan mujhe bekaar lag rha hai hurt ho rha hai tumhare aise dur rehne se or bhai shab jab block karti ho tab to kya hi bolu itna jada panick karta hu pagal ho jata hu BUT mujhe tumhara ye tough nature pasand ayaa mtlb tum kitni majbut hoo ..yha pe tumse dur hone ka khyal aatey hi gote muh me aa jatey hai but hats off to you yrr tum bhi mere jaisa hi feel karti ho ghutan wagera sayad naa bhi karti ho but mujhe lagta hai ki tum karti ho lekin uske baawajood tum waise kar paati ho wo bahot himmat wali baat hai . Ya kya pta janti hi ho me kamjor aadmi , darpok aadmi hu isliye bhi mere se nahi saha jata bas sochta rehta hu kaash tum call kardo bas raho mere sath lekin koi naa tumhari galti bhi nahi hai mere se dur rehne me hi tumhe acha or free feel hota hai to its ohkey to be like that . Kher bahot faaltu bol liya ..
+I Loveee Youuuu Soo Muchhh meri Mohabbat ~~ 🍀✨💓 
+I loveee youu infinity naaa  fuck aansu aarey aahh 
+( YE abhi likh rha - mene koi aukat dikhane ka nahi socha or naahi kabhi aise socha hai or me kuch bhi bas batane ka try kar rha hu to tum offend ho jaa rahi ho jo me bilkul bhi nahi karna chahta mere ko or ladai nahi badhani jabki me tumhare bina soo bhi nahi pata .. haan ussey baat karti hi ajeeb lagta hai janta hu kuch nahi hai but fir bhi lagta hai Sorry uske liye .. or please apne aap ko baar baar ulta mat bola karo or isme se koi bhi baat mene ladne ya jhagadne ke liye nahi boli hai koi sarcasm nahi hai bas ek haarey hue darpok ki baatein hai jo mujhe khud bhi nahi pata Too please koi bhi baat aone upar ya ulta mat le lena 
+Too yahi kahunga ki ..pta nahi nahi keh para bas ye chahta hu ki mere sath raho lekin janta hu tumhe lagega kie wahi sab karunga kher sach hai ki karunga or bahot jor see bahot achee see karungaaa I WILL FUCK YOUU WITH ALL MY HEART AND LOVE .</p>
+  <button onclick="showProposal()">Continue 💖</button>
+</div>
+
+<div class="card" id="proposal">
+  <img src="dudu-love.png" class="sticker" style="top:-30px;right:-20px">
+  <h2>Godi logi kya mujhe  </h2>
+  <div id="btnBox">
+    <button id="yes" onclick="showFinal()">YES 💞</button>
+    <button id="no" onclick="moveNo()">NO 🙈</button>
+  </div>
+</div>
+
+<div id="final">
+  <div id="finalContent">
+    <img src="my-photo.jpg" id="photo">
+    <h1>I Wuwww Youu naa 🥹❤️</h1>
+    <p>I need you humesha tumhare sath rehna hai. Please dont Leave me .</p>
+    <img src="kiss.gif" class="sticker" style="top:-110px;left:-40px; width:150px">
+    
+<img src="hug.gif" class="sticker" style="bottom:-110px;right:-40px; width:100px">
+
+  </div>
+</div>
+
+<script>
+const env=document.getElementById("env");
+const apology=document.getElementById("apology");
+const proposal=document.getElementById("proposal");
+const final=document.getElementById("final");
+const music=document.getElementById("music");
+const noBtn=document.getElementById("no");
+const box=document.getElementById("btnBox");
+
+let clicks=0;
+
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="💖";
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=14+Math.random()*20+"px";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},700);
+
+function openEnvelope(){
+  env.classList.add("open");
+  music.play();
+  setTimeout(()=>{
+    env.style.display="none";
+    apology.style.display="block";
+  },900);
+}
+
+function showProposal(){
+  apology.style.display="none";
+  proposal.style.display="block";
+}
+
+function moveNo(){
+  noBtn.style.left=Math.random()*(box.offsetWidth-110)+"px";
+  noBtn.style.top=Math.random()*(box.offsetHeight-60)+"px";
+  if(clicks<12){
+    clicks++;
+    noBtn.style.transform=`scale(${1-(clicks/12)*.6})`;
+  }
+}
+
+function showFinal(){
+  proposal.style.display="none";
+  final.style.display="block";
+  for(let i=0;i<120;i++){
+    const c=document.createElement("div");
+    c.className="confetti";
+    c.style.left=Math.random()*100+"vw";
+    c.style.background=`hsl(${Math.random()*360},100%,70%)`;
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),3000);
+  }
+}
+</script>
+
+</body>
+</html>
